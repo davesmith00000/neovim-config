@@ -27,6 +27,7 @@ Plugin 'joshdick/onedark.vim' " NeoVim theme
 Plugin 'sheerun/vim-polyglot' " General language support / syntax highlighting
 Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 'Conquer of Completion' - the thing being used to drive Scala metals
 Plugin 'Yggdroot/indentLine'
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor support
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
