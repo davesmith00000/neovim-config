@@ -1,0 +1,5 @@
+{
+	"metals.sbt-script": "/usr/local/bin/sbt",
+	"coc.preferences.rootPatterns": ["build.sbt", ".vim", ".git", ".hg", ".projections.json"],
+	"coc.preferences.formatOnSaveFiletypes": ["scala", "sbt"]
+}
