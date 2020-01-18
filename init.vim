@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim' " Vim package bundler
 Plugin 'junegunn/goyo.vim' " Zen mode
 Plugin 'junegunn/limelight.vim' " Greys out areas of code you're not looking at
 Plugin 'tpope/vim-fugitive' " git support
+Plugin 'tpope/vim-commentary' " Comment stuff out!
 Plugin 'derekwyatt/vim-scala' " Syntax highlighting and import sorting
 Plugin 'vim-airline/vim-airline' " Status bar
 Plugin 'vim-airline/vim-airline-themes' " Themes for the airline status bar
@@ -31,6 +32,11 @@ Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor support
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"--------------------------------
+" Vim Commentary
+autocmd FileType scala setlocal commentstring=//\ %s
+autocmd FileType sbt setlocal commentstring=//\ %s
 
 "--------------------------------
 " IndentLine
