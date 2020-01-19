@@ -34,6 +34,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "--------------------------------
+" FZF
+let g:fzf_buffers_jump = 1 " Use existing buffers when a file is already open
+
+"--------------------------------
 " Aitline status and tabs
 let g:airline_theme='onedark'
 
