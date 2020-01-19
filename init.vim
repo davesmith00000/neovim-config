@@ -34,6 +34,16 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "--------------------------------
+" Aitline status and tabs
+let g:airline_theme='onedark'
+
+" tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+"--------------------------------
 " Vim Commentary
 autocmd FileType scala setlocal commentstring=//\ %s
 autocmd FileType sbt setlocal commentstring=//\ %s
