@@ -3,9 +3,13 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set mouse=a
 set encoding=UTF-8
+set number relativenumber
 
 set list
 set listchars=tab:›\ ,eol:¬,trail:⋅
+
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
 
 " Vundle (Package manager)
 " set the runtime path to include Vundle and initialize
@@ -20,8 +24,8 @@ Plugin 'tpope/vim-commentary' " Comment stuff out!
 Plugin 'derekwyatt/vim-scala' " Syntax highlighting and import sorting
 Plugin 'vim-airline/vim-airline' " Status bar
 Plugin 'vim-airline/vim-airline-themes' " Themes for the airline status bar
-Plugin 'scrooloose/nerdtree' " Folder tree view
-Plugin 'Xuyuanp/nerdtree-git-plugin' " Git extension for nerdtree
+" Plugin 'scrooloose/nerdtree' " Folder tree view
+" Plugin 'Xuyuanp/nerdtree-git-plugin' " Git extension for nerdtree
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy finder
 Plugin 'junegunn/fzf.vim'  " General fuzzy finder
 Plugin 'joshdick/onedark.vim' " NeoVim theme
@@ -29,9 +33,30 @@ Plugin 'sheerun/vim-polyglot' " General language support / syntax highlighting
 Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 'Conquer of Completion' - the thing being used to drive Scala metals
 Plugin 'Yggdroot/indentLine'
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor support
+Plugin 'mcchrish/nnn.vim' " Alternate filemanager to NERDTree.
+Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow brackets
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"--------------------------------
+" nnn
+
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
+
+" Opens the nnn window in a split
+" let g:nnn#layout = 'tabnew' " or vnew, tabnew etc.
+
+" Or pass a dictionary with window size
+" let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+" let g:nnn#layout = 'tabedit'
+
+" Start nnn in the current file's directory
+nnoremap <leader>n :NnnPicker '%:p:h'<CR>
 
 "--------------------------------
 " FZF
@@ -48,6 +73,10 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 "--------------------------------
+" Rainbow parentheses
+autocmd FileType scala RainbowParentheses
+
+"--------------------------------
 " Vim Commentary
 autocmd FileType scala setlocal commentstring=//\ %s
 autocmd FileType sbt setlocal commentstring=//\ %s
@@ -58,25 +87,25 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 
 "--------------------------------
-" NerdTree Settings
-let g:NERDTreeChDirMode = 2  " Change cwd to parent node
-let g:NERDTreeMinimalUI = 1  " Hide help text
-let g:NERDTreeAutoDeleteBuffer = 1
-let NERDTreeShowHidden = 1
-nnoremap <leader>n :NERDTreeToggle<CR>
-nnoremap <leader>N :NERDTreeFind<CR>
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "✹",
-            \ "Staged"    : "✚",
-            \ "Untracked" : "✭",
-            \ "Renamed"   : "➜",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "✖",
-            \ "Dirty"     : "✗",
-            \ "Clean"     : "✔︎",
-            \ 'Ignored'   : '☒',
-            \ "Unknown"   : "?"
-            \ }
+" NerdTree settings
+" let g:NERDTreeChDirMode = 2  " Change cwd to parent node
+" let g:NERDTreeMinimalUI = 1  " Hide help text
+" let g:NERDTreeAutoDeleteBuffer = 1
+" let NERDTreeShowHidden = 1
+" nnoremap <leader>n :NERDTreeToggle<CR>
+" nnoremap <leader>N :NERDTreeFind<CR>
+" let g:NERDTreeIndicatorMapCustom = {
+"             \ "Modified"  : "✹",
+"             \ "Staged"    : "✚",
+"             \ "Untracked" : "✭",
+"             \ "Renamed"   : "➜",
+"             \ "Unmerged"  : "═",
+"             \ "Deleted"   : "✖",
+"             \ "Dirty"     : "✗",
+"             \ "Clean"     : "✔︎",
+"             \ 'Ignored'   : '☒',
+"             \ "Unknown"   : "?"
+"             \ }
 
 "--------------------------------
 " Goyo
