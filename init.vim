@@ -52,14 +52,14 @@ if !exists('g:vscode')
   " let g:nnn#layout = 'tabnew' " or vnew, tabnew etc.
 
   " Or pass a dictionary with window size
-  " let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+  " let g:nnn#layout = { 'left': '~25%' } " or right, up, down
 
   " Floating window (neovim latest and vim with patch 8.2.191)
   let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
   " let g:nnn#layout = 'tabedit'
 
   " Start nnn in the current file's directory
-  nnoremap <leader>n :NnnPicker '%:p:h'<CR>
+  nnoremap <leader>n :NnnPicker %:p:h<CR>
 
   "--------------------------------
   " FZF
@@ -109,6 +109,12 @@ if !exists('g:vscode')
   "             \ 'Ignored'   : '☒',
   "             \ "Unknown"   : "?"
   "             \ }
+
+  "--------------------------------
+  " Netrw
+  let g:netrw_liststyle = 3
+  let g:netrw_browse_split = 3
+  let g:netrw_winsize = 25 " 25% of the page width
 
   "--------------------------------
   " Goyo
