@@ -35,7 +35,7 @@ if !exists('g:vscode')
   Plugin 'sheerun/vim-polyglot' " General language support / syntax highlighting
   Plugin 'neoclide/coc.nvim', {'branch': 'release'} " 'Conquer of Completion' - the thing being used to drive Scala metals
   Plugin 'Yggdroot/indentLine'
-  Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor support
+  " Plugin 'mg979/vim-visual-multi', {'branch': 'master'} " Multi cursor support
   Plugin 'mcchrish/nnn.vim' " Alternate filemanager to NERDTree.
   Plugin 'junegunn/rainbow_parentheses.vim' " Rainbow brackets
   " All of your Plugins must be added before the following line
@@ -112,9 +112,9 @@ if !exists('g:vscode')
 
   "--------------------------------
   " Netrw
-  let g:netrw_liststyle = 3
-  let g:netrw_browse_split = 3
-  let g:netrw_winsize = 25 " 25% of the page width
+  " let g:netrw_liststyle = 3
+  " let g:netrw_browse_split = 3
+  " let g:netrw_winsize = 25 " 25% of the page width
 
   "--------------------------------
   " Goyo
