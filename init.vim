@@ -8,6 +8,8 @@ if !exists('g:vscode')
   set mouse=a
   set number relativenumber
 
+  let mapleader=","
+
   set list
   set listchars=tab:›\ ,eol:¬,trail:⋅
 
